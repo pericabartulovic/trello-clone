@@ -1,0 +1,23 @@
+<div class="modal-overlay" (click)="onClose()"></div>
+<div class="modal-container">
+    <header class="modal-header">
+        <h2>Create New Board</h2>
+        <button (click)="onClose()" class="close-btn">×</button>
+    </header>
+
+    <div class="modal-body">
+        <label for="board-name">Board Name:</label>
+        <input
+            #boardInput type="text"
+            [(ngModel)]="boardName"
+            name="boardName"
+            placeholder="Enter board name"
+            required
+            (keydown.enter)="onCreateBoard()"
+        />
+    </div>
+
+    <div class="modal-footer">
+        <button (click)="onCreateBoard()" class="create-btn">Create</button>
+    </div>
+</div>

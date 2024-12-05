@@ -1,0 +1,27 @@
+<div class="board-container" [ngStyle]="{ 'background-color': getBoardBackgroundColor(boardId) }">
+    <!-- Board Header -->
+    <div class="board-header" [ngStyle]="{ 'background-color': getBoardHeaderColor(boardId) }">
+        <h1>{{ boardName }}</h1>
+    </div>
+
+    <div class="lists">
+        <app-list 
+            *ngFor="let list of lists"
+            [list]="list"
+            [boardId]="boardId"
+            (listDeleted)="onListDeleted()"
+        ></app-list>
+
+        <!-- Add New List Button -->
+        <button *ngIf="!showAddListForm" class="list add-list" (click)="showAddListForm = true">
+            <h3>+ Add another list</h3>
+        </button>
+        <div *ngIf="showAddListForm" class="list-form">
+            <input type="text" [(ngModel)]="newListName" placeholder="Enter list name..."  (keydown.enter)="confirmAddList()" />
+           <div class="list-form__actions">
+                <button (click)="confirmAddList()">Add list</button>
+                <button (click)="cancelAddList()"><i class="material-icons">close</i></button>
+           </div>
+        </div>
+    </div>
+</div>

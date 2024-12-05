@@ -1,0 +1,14 @@
+<div class="admin-container">
+    <h1>Boards</h1>
+    <div class="boards">
+        <div class="board-card" *ngFor="let board of boards" [routerLink]="['/board', board.id]">
+            {{ board.name }}
+        </div>
+        <button (click)="modalService.openModal()">Create New Board</button>
+    </div>
+    <app-create-board-modal
+        *ngIf="(modalService.isModalOpen$ | async)"
+        (close)="modalService.closeModal()"
+        (boardCreated)="onBoardCreated()"
+    ></app-create-board-modal>
+</div>

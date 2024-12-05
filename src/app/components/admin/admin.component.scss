@@ -1,0 +1,45 @@
+.admin-container {
+  padding: 2rem 2rem 0;
+
+  h1 {
+    font-size: 1.6rem;
+    padding-left: 1rem;
+    color: #8a8989;
+  }
+}
+
+.boards {
+  display: flex;
+  column-gap: 2rem;
+
+  button {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    padding: 8px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #a1bdd914;
+    background-position: center center;
+    background-size: cover;
+    color: #9fadbc;
+    font-weight: 400;
+    text-align: start;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #091e420f;
+      color: #fff;
+    }
+  }
+}
+
+.board-card {
+  cursor: pointer;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: #444;
+  }
+}

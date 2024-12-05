@@ -1,0 +1,163 @@
+.list {
+  background-color: #222;
+  color: #ddd;
+  border-radius: 0.3125rem;
+  padding: 0.625rem;
+  width: 15.625rem;
+  display: flex;
+  flex-direction: column;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .delete-list-btn {
+    background-color: transparent;
+
+    span {
+      font-size: 1.1rem;
+      color: #b7b7b7;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .mini-form {
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+      resize: none;
+      width: 100%;
+      height: 3.125rem;
+      margin-bottom: 0.625rem;
+      padding: 0.3125rem;
+      font-size: 0.875rem;
+    }
+
+    button {
+      margin-right: 0.3125rem;
+      padding: 0.3125rem 0.625rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  .add-card {
+    margin-top: 0.625rem;
+    color: #0079bf;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+}
+
+.add-card {
+  cursor: pointer;
+  color: blue;
+  font-weight: bold;
+}
+
+.mini-form {
+  margin-top: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.6rem;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  background-color: #101204;
+
+  input,
+  textarea {
+    display: block;
+    height: 1.875rem;
+    min-height: 1.25rem;
+    max-height: 16rem;
+    margin: 0;
+    padding: 0.375rem 0.75rem;
+    overflow: hidden;
+    color: #b6c2cf;
+    font-weight: 600;
+    resize: none;
+    overflow-wrap: break-word;
+    background-color: #22272b;
+    border: none;
+    border-radius: 0.1875rem;
+    box-shadow: inset 0 0 0 0.0625rem #738496;
+    box-sizing: border-box;
+    line-height: 1.25rem;
+    font-family: inherit;
+  }
+
+  &__actions {
+    display: flex;
+    align-content: center;
+  }
+}
+
+.cards-list {
+}
+
+.card {
+  margin: 0.625rem 0;
+  padding: 0.625rem;
+  border: 0.0625rem solid #ddd;
+  border-radius: 0.3125rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    h4 {
+      margin: 0;
+    }
+
+    button {
+      padding: 0;
+    }
+
+    span {
+      font-size: 1.1rem;
+      color: #b7b7b7;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+}
+
+textarea {
+  width: 100%;
+  height: 3.75rem;
+}
+
+input[type="date"] {
+  margin-top: 0.3125rem;
+  width: 100%;
+}
+
+button {
+  margin-top: 0.3125rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.625rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+
+  &:nth-child(2) {
+    background-color: transparent;
+  }
+
+  i {
+    font-size: 1.2rem;
+  }
+}
+
+button:hover {
+  background-color: #0056b3;
+}

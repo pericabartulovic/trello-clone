@@ -1,0 +1,35 @@
+<div class="list">
+    <div class="list-header">
+        <h3>{{ list.name }}</h3>
+        <button class="delete-list-btn" (click)="confirmDeleteList()">
+            <span class="material-icons">delete</span>
+        </button>
+    </div>
+
+    <!-- List of Cards -->
+    <div class="cards-list">
+        <div *ngFor="let card of cards" class="card">
+            <div class="card__header">
+                <h4>{{ card.title }}</h4>
+                <button (click)="deleteCard(card.id)"><span class="material-icons">delete</span></button>
+            </div>
+            <p *ngIf="card.dueDate">Due: {{ card.dueDate | date: 'dd.MM.yyyy.' }}</p>
+            <p *ngIf="!card.dueDate">No due date</p>
+        </div>
+    </div>
+
+    <!-- Mini Form for Adding Cards -->
+    <div *ngIf="isAddingCard; else addCardButton" class="mini-form">
+        <textarea [(ngModel)]="newCardTitle" placeholder="Enter a title or paste a link" (keydown.enter)="addCard()"></textarea>
+        <input type="date" [(ngModel)]="newCardDueDate" />
+        <div class="mini-form__actions">
+            <button (click)="addCard()">Add card</button>
+            <button (click)="cancelAddCard()"><i class="material-icons">close</i></button>
+        </div>
+    </div>
+
+    <!-- "+ Add a card" Button -->
+    <ng-template #addCardButton>
+        <div class="add-card" (click)="isAddingCard = true">+ Add a card</div>
+    </ng-template>
+</div>
