@@ -1,4 +1,4 @@
-@import './app/mixins';
+@use './app/mixins';
 
 body {
   font-family: "Roboto", sans-serif;
@@ -10,7 +10,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   
-  @include respond-to(mobile) {
+  @include mixins.respond-to(mobile) {
     font-size: 80%;
    }
 }
